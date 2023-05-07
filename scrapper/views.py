@@ -20,3 +20,8 @@ def srape(request):
         data = Link.objects.all()
 
     return render(request, 'scrapper/result.html', {'data': data})
+
+
+def clear(request):
+    Link.objects.all().delete()
+    return render(request, 'scrapper/result.html')
